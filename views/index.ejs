@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Quotes</title>
+	<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+	<h1 data-position="header">"Less is more"</h1>
+
+	<section data-position="add-quote">
+		<h2>Tambah quotes</h2>
+		<form action="/quotes" method="post">
+			<input type="text" placeholder="Nama Tokoh" name="name">
+			<input type="text" placeholder="quote" name="quote">
+			<button type="submit">Tambah</button>
+		</form>
+	</section>
+
+	<section data-position="update-quote">
+		<div>
+			<h2>Dumb quotes</h2>
+			<p>
+				Menambah dumb quotes
+			</p>
+			<button id="update-button">Tambah</button>
+		</div>
+	</section>
+
+	<section data-position="delete-quote">
+		<div>
+			<h2>Hapus dumb quotes</h2>
+			<p>
+				Hapus salah satu dumb quotes..
+			</p>
+			<div id="message"></div>
+			<button id="delete-button">Hapus dumb quotes</button>
+		</div>
+	</section>
+
+	<section data-position="quotes">
+		<h2>Quotes</h2>
+    <ul class="quotes">
+        <% quotes.forEach(quote => { %>
+					<li class="quote">
+						<span><%= quote.name %></span>:
+						<span><%= quote.quote %></span>
+					</li>
+				<% }) %>
+		</ul>
+	</section>
+
+		
+
+	<script src="/main.js"></script>
+</body>
+</html>
